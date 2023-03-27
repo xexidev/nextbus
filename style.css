@@ -74,7 +74,7 @@ meter {
     --color-not-operative-soft: #FFF5F5;
 
     --display-height: 315px;
-    --footer-height: 20px;
+    --footer-height: 32px;
 
     --main-font: 'Inter', sans-serif
 }
@@ -95,12 +95,17 @@ main {
     min-height: calc(100vh - var(--footer-height));
     background-color:white;
 }
-footer {
-    height: var(--footer-height);
-}
 .container {
     width: 100%;
     max-width: 600px;
+}
+a {
+    color: var(--main-color);
+    transition: color 250ms linear;
+}
+a:hover {
+    color: var(--main-color-bright);
+    transition: color 250ms linear;
 }
 .button {
     display: inline-block;
@@ -398,4 +403,14 @@ footer {
     font-size: 70%;
     color: var(--color-not-operative);
     margin-bottom: 1rem;
+}
+
+/* FOOTER*/
+footer {
+    display: flex;
+    height: var(--footer-height);
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
 }
