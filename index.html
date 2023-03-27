@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N72N54DCF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-N72N54DCF6');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextBus App</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+	<meta name="description" content="Single Page Application that shows the remaining time for a Bus to arrive for a given Bus Line and Stop."/>
+	<meta name="keywords" content="TMB, Bus Barcelona, App" />
+	<meta name="author" content="Sergi Talavera (Xexi)" />
+    <meta property="og:type" content="application">
+    <meta property="og:description" content="Single Page Application that shows the remaining time for a Bus to arrive for a given Bus Line and Stop.">
+    <meta property="og:image" content="https://xexi.es/app/nextbus/social.png">
+    <meta property="og:site_name" content="Xexi NexBus App">
+    <meta property="og:locale" content="en_EN">
+</head>
+<body>
+    <main>
+        <div class="display">
+            <div class="animationDisplay">
+                <div class="container">
+                    <svg class="svgCloud svgCloud-1" viewBox="0 0 32 32">
+                        <g><path d="M31,15.5c0-3.2-2.6-5.9-5.8-5.9c-1.1-3.1-4.1-5.4-7.6-5.4c-2.3,0-4.4,1-5.9,2.6C10.9,6.6,10,6.4,9,6.4c-4.4,0-8,3.6-8,8C1,18,3.3,21,6.5,22c0.5,2.7,2.9,4.7,5.8,4.7c1.9,0,3.6-0.9,4.7-2.3c0.9,0.8,2.1,1.2,3.4,1.2c2.6,0,4.8-1.9,5.3-4.3C28.6,21.2,31,18.6,31,15.5z"/></g>
+                    </svg>
+                    <svg class="svgCloud svgCloud-2" viewBox="0 0 32 32">
+                        <g><path d="M31,15.5c0-3.2-2.6-5.9-5.8-5.9c-1.1-3.1-4.1-5.4-7.6-5.4c-2.3,0-4.4,1-5.9,2.6C10.9,6.6,10,6.4,9,6.4c-4.4,0-8,3.6-8,8C1,18,3.3,21,6.5,22c0.5,2.7,2.9,4.7,5.8,4.7c1.9,0,3.6-0.9,4.7-2.3c0.9,0.8,2.1,1.2,3.4,1.2c2.6,0,4.8-1.9,5.3-4.3C28.6,21.2,31,18.6,31,15.5z"/></g>
+                    </svg>
+                    <svg class="svgBusStop" viewBox="0 0 32 20">
+                        <g>
+                            <rect x="1.1" y="1.9" class="st0" width="16.4" height="9.2"/>
+                            <g>
+                                <path class="st1" d="M27.2,6.4c-0.2,0-0.3,0.1-0.3,0.3c0,0.2,0.1,0.3,0.3,0.3c0.2,0,0.3-0.1,0.3-0.3C27.5,6.5,27.4,6.4,27.2,6.4z"
+                                    />
+                                <path class="st1" d="M30.2,5.6V4.3C30.2,4.2,30,4,29.9,4h-2.5c-0.2,0-0.3,0.1-0.3,0.3v1.3c0,0.2,0.1,0.3,0.3,0.3h2.5
+                                    C30,5.9,30.2,5.8,30.2,5.6z"/>
+                                <path class="st1" d="M31.1,2.3h-4.7c-0.1,0-0.1,0-0.1,0V1.9V0h-1.1h-6.5h-1.1H1.1H0v1.9v9.2v3.1V15v0.8V20h1.1v-4.2h16.4V20h1.1
+                                    V1.9h6.5V20h1.1V8.8c0,0,0.1,0,0.1,0h4.7c0.5,0,0.9-0.4,0.9-0.9V3.2C32,2.7,31.6,2.3,31.1,2.3z M17.5,15H1.1v-0.8h16.4V15z
+                                    M17.5,11.2H1.1V1.9h16.4V11.2z M31.1,5.4c0,0.1-0.1,0.2-0.2,0.2h-0.1v1.6c0,0.1-0.1,0.3-0.2,0.3h-0.1v0.3c0,0.2-0.1,0.3-0.3,0.3
+                                    h-0.3c-0.2,0-0.3-0.1-0.3-0.3V7.5h-1.9v0.3c0,0.2-0.1,0.3-0.3,0.3h-0.3c-0.2,0-0.3-0.1-0.3-0.3V7.5c-0.2,0-0.3-0.1-0.3-0.3V5.6
+                                    h-0.1c-0.1,0-0.2-0.1-0.2-0.2V4.6c0-0.1,0.1-0.2,0.2-0.2h0.1V3.9c0-0.4,1-0.8,2.2-0.8s2.2,0.3,2.2,0.8v0.5h0.1
+                                    c0.1,0,0.2,0.1,0.2,0.2V5.4z"/>
+                                <path class="st1" d="M30,6.4c-0.2,0-0.3,0.1-0.3,0.3C29.7,6.9,29.8,7,30,7c0.2,0,0.3-0.1,0.3-0.3C30.3,6.5,30.2,6.4,30,6.4z"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <svg class="svgBus" viewBox="0 0 32 12">
+                        <g>
+                            <circle cx="24.3" cy="10.1" r="1.9"/>
+                            <circle cx="8.1" cy="10.1" r="1.9"/>
+                            <g class="svgBus-body">
+                                <path d="M32,8.3c-0.2-1.1-0.7-2.8-2.3-5c-1.6-2.3-3.4-2.1-3.4-2.1S6.4,1.2,4.7,1.2S1.6,1.5,0.8,3C-0.1,4.6,0,7.8,0,8.9
+                                    c0,1.2,2.2,1.4,2.2,1.4s16.1,0,19.8,0c0-0.1,0-0.2,0-0.3c0-1.3,1-2.3,2.3-2.3c1.3,0,2.3,1,2.3,2.3c0,0.1,0,0.2,0,0.3
+                                    c1.2,0,2,0,2.4,0C31.5,10.4,32.2,9.3,32,8.3z M3.3,6.9c0,0.1-0.1,0.2-0.2,0.2H2H0.9c0-1.4,0.1-2.9,0.8-4H2h1.1
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M8.4,6.9c0,0.1-0.1,0.2-0.2,0.2H4.2C4.1,7.1,4,7,4,6.9V3.2C4,3.1,4.1,3,4.2,3h4.1
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M12.6,6.9c0,0.1-0.1,0.2-0.2,0.2H9.3C9.2,7.1,9.1,7,9.1,6.9V3.2C9.1,3.1,9.2,3,9.3,3h3.2
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M17.3,6.9c0,0.1-0.1,0.2-0.2,0.2h-3.6c-0.1,0-0.2-0.1-0.2-0.2V3.2c0-0.1,0.1-0.2,0.2-0.2h3.6
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M21.1,6.9c0,0.1-0.1,0.2-0.2,0.2h-2.8C18.1,7.1,18,7,18,6.9V3.2C18,3.1,18.1,3,18.1,3H21
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M25.3,6.9c0,0.1-0.1,0.2-0.2,0.2H22c-0.1,0-0.2-0.1-0.2-0.2V3.2C21.8,3.1,21.9,3,22,3h3.1
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M27.8,6.9c0,0.1-0.1,0.2-0.2,0.2h-1.5c-0.1,0-0.2-0.1-0.2-0.2V3.2C25.9,3.1,26,3,26.1,3h1.5
+                                    c0.1,0,0.2,0.1,0.2,0.2V6.9z M30.7,7.1h-2.1c-0.1,0-0.2-0.1-0.2-0.2V3.2c0-0.1,0.1-0.2,0.2-0.2h0c0.1,0.1,0.1,0.1,0.2,0.2
+                                    C29.9,4.8,30.5,6.1,30.7,7.1C30.8,7.1,30.8,7.1,30.7,7.1z"/>
+                                <g class="svgBus-body-windows">
+                                    <path d="M3.3,6.9c0,0.1-0.1,0.2-0.2,0.2H2H0.9c0-1.4,0.1-2.9,0.8-4H2h1.1c0.1,0,0.2,0.1,0.2,0.2V6.9z"/>
+                                    <path d="M8.4,6.9c0,0.1-0.1,0.2-0.2,0.2H4.2C4.1,7.1,4,7,4,6.9V3.2C4,3.1,4.1,3,4.2,3h4.1c0.1,0,0.2,0.1,0.2,0.2V6.9z"/>
+                                    <path d="M12.6,6.9c0,0.1-0.1,0.2-0.2,0.2H9.3C9.2,7.1,9.1,7,9.1,6.9V3.2C9.1,3.1,9.2,3,9.3,3h3.2c0.1,0,0.2,0.1,0.2,0.2V6.9z"/>
+                                    <path d="M21.1,6.9c0,0.1-0.1,0.2-0.2,0.2h-2.8C18.1,7.1,18,7,18,6.9V3.2C18,3.1,18.1,3,18.1,3H21c0.1,0,0.2,0.1,0.2,0.2V6.9z"/>
+                                    <path d="M25.3,6.9c0,0.1-0.1,0.2-0.2,0.2H22c-0.1,0-0.2-0.1-0.2-0.2V3.2C21.8,3.1,21.9,3,22,3h3.1c0.1,0,0.2,0.1,0.2,0.2V6.9z"/>
+                                    <path d="M27.8,6.9c0,0.1-0.1,0.2-0.2,0.2h-1.5c-0.1,0-0.2-0.1-0.2-0.2V3.2C25.9,3.1,26,3,26.1,3h1.5c0.1,0,0.2,0.1,0.2,0.2V6.9z"
+                                        />
+                                    <path d="M30.7,7.1h-2.1c-0.1,0-0.2-0.1-0.2-0.2V3.2c0-0.1,0.1-0.2,0.2-0.2h0c0.1,0.1,0.1,0.1,0.2,0.2C29.9,4.8,30.5,6.1,30.7,7.1
+                                        C30.8,7.1,30.8,7.1,30.7,7.1z"/>
+                                    <path d="M17.3,6.9c0,0.1-0.1,0.2-0.2,0.2h-3.6c-0.1,0-0.2-0.1-0.2-0.2V3.2c0-0.1,0.1-0.2,0.2-0.2h3.6c0.1,0,0.2,0.1,0.2,0.2V6.9z
+                                        "/>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                                            
+                </div>
+            </div>
+            <div class="countdownDisplay">
+                <div class="container">
+                    <div class="busArrivalText">Your bus arrives in</div>
+                    <div class="timer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <div class="container">
+                <div class="welcome">
+                    <div class="welcome-message">
+                        <svg class="logo" viewBox="0 0 1024 1024">
+                            <g>
+                                <path class="st0" d="M21.1,366l137.8-63.5l-49.3-107C70.1,245.6,39.7,303.3,21.1,366z"/>
+                                <path class="st0" d="M215,424.1L0.1,523.2C5.9,794,221.9,1013,491.5,1023.6L215,424.1z"/>
+                                <path class="st0" d="M280.6,246.3l439-202.5C656.1,15.7,585.9,0,512,0C399.8,0,296.1,36.1,211.8,97.2L280.6,246.3z"/>
+                                <g>
+                                    <path class="st0" d="M834.6,514.7c-13.7,6.1-19.9,22.3-13.7,36.2c6.2,13.9,22.3,20.2,36.1,14c13.7-6.1,19.9-22.3,13.7-36.2C864.5,514.9,848.4,508.6,834.6,514.7z"/>
+                                    <path class="st0" d="M819.1,446.4l-44.8-100.5c-6.2-13.9-22.3-20.2-36.1-14l-199,88.7c-13.7,6.1-19.9,22.3-13.7,36.2l44.8,100.5c6.2,13.9,22.3,20.2,36.1,14l199-88.7C819.2,476.5,825.3,460.3,819.1,446.4z"/>
+                                    <path class="st0" d="M610.8,614.5c-13.7,6.1-19.9,22.3-13.7,36.2c6.2,13.9,22.3,20.2,36.1,14c13.7-6.1,19.9-22.3,13.7-36.2C640.6,614.6,624.5,608.3,610.8,614.5z"/>
+                                    <path class="st0" d="M852.8,129.9L336.7,368l296,641.7C857.2,955.5,1024,753.2,1024,512C1024,360.1,957.9,223.7,852.8,129.9zM908.6,647.3l-24.9,11.1c-13.7,6.1-29.9-0.2-36.1-14l-11.2-25.1l-149.3,66.5l11.2,25.1c6.2,13.9,0.1,30.1-13.7,36.2l-24.9,11.1
+                                        c-13.7,6.1-29.9-0.2-36.1-14L612.6,719c-13.7,6.1-29.9-0.2-36.1-14l-55.9-125.6l-6.2,2.8c-10.3,4.6-22.4-0.1-27-10.5l-28-62.8c-4.6-10.4,0-22.6,10.3-27.1l6.2-2.8L459,441.2c-15.7-35.2,49.2-97.1,146.2-140.4c97-43.2,186.4-49.9,202.1-14.8l16.8,37.7l6.2-2.8c10.3-4.6,22.4,0.1,27,10.5l28,62.8c4.6,10.4,0,22.6-10.3,27.1l-6.2,2.8L927,554.8c4.5,10,1.5,23.4-11,29l-5,2.2l11.2,25.1C928.5,625,922.4,641.2,908.6,647.3z"/>
+                                </g>
+                            </g>
+                        </svg>
+                        
+                        <strong class="welcome-message-title">Welcome to NextBus App</strong>
+                        This App provides updated information about the remaining time for a Barcelona TMB Bus to arrive to a Bus Stop. 
+                        Just select the Bus Line you are willing to take, and then your Bus Stop for the info to show up.
+                    </div>
+                </div>
+                <form class="form">
+                    <div class="fieldBox">
+                        <label for="linesSelect">Bus Line</label>
+                        <select class="linesSelect" name="linesSelect"></select>
+                    </div>
+                    <div class="fieldBox">
+                        <label for="stopsSelect">Bus Stop</label>
+                        <select class="stopsSelect" name="stopsSelect"></select>
+                    </div>
+                </form>
+                <div class="lineInfoBox">
+                </div>
+            </div>
+        </div>
+        <div class="errorBox">
+            <div class="errorBox-content">
+                <svg class="errorBox-icon" viewBox="0 0 24 24">
+                    <g>
+                        <path d="M12,5.511c0.561,0,1.119,0.354,1.544,1.062l5.912,9.854C20.307,17.842,19.65,19,18,19H6c-1.65,0-2.307-1.159-1.456-2.573l5.912-9.854C10.881,5.865,11.439,5.511,12,5.511 M12,3.511c-1.296,0-2.482,0.74-3.259,2.031l-5.912,9.856c-0.786,1.309-0.872,2.705-0.235,3.83S4.473,21,6,21h12c1.527,0,2.77-0.646,3.406-1.771s0.551-2.521-0.235-3.83l-5.912-9.854C14.482,4.251,13.296,3.511,12,3.511z"/>
+                    </g>
+                    <g>
+                        <circle cx="12" cy="16" r="1.3"/>
+                    </g>
+                    <g>
+                        <path d="M13.5,10c0-0.83-0.671-1.5-1.5-1.5s-1.5,0.67-1.5,1.5c0,0.199,0.041,0.389,0.111,0.562C11.165,11.938,12,14,12,14s0.835-2.062,1.391-3.438C13.459,10.389,13.5,10.199,13.5,10z"/>
+                    </g>
+                </svg>
+                <div class="errorBox-info"></div>
+                <button class="errorBox-reload button" onclick="location.reload()">Reload App</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
