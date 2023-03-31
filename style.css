@@ -214,11 +214,12 @@ a:hover {
 .svgBusStop .st1 {
     fill: white;
 }
-.svgBus {
+svg.svgBus {
     position: absolute;
     fill: white;
     bottom: 0;
     width: 220px;
+    display: none;
 }
 .svgBus-body {    
     animation-name: wobblingBus;
